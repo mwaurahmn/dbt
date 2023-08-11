@@ -5,4 +5,4 @@ select
     status,
     amount / 100 as amount, -- amount is stored in cents, convert to dollars
     created as created_at
-from raw.stripe.payment
+from {{source("stripe", 'payment')}}
